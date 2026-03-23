@@ -13,9 +13,9 @@
 
 ---
 
-FoxTrack Bridge is a lightweight background app that runs on your local network and connects your BambuLab printers directly to FoxTrack using LAN mode — no BambuLab cloud, no rate limits, no account required.
+FoxTrack Bridge is a lightweight background app that runs on your local network and connects your BambuLab printers directly to FoxTrack using LAN mode - no BambuLab cloud, no rate limits, no account required.
 
-It sits in your system tray, starts automatically at login, and silently relays real-time printer status (print state, file name, progress, errors) to your FoxTrack dashboard.
+It sits in your system tray, should start automatically at login, and silently relays real-time printer status (print state, file name, progress, errors) to your FoxTrack dashboard.
 
 ## Download
 
@@ -35,11 +35,11 @@ Get the latest version for your platform:
 Your printer must be in **LAN Only Mode** to connect directly without BambuLab's cloud.
 
 - On the printer touchscreen: **Settings → Network → LAN Only Mode**
-- Or downgrade firmware to v1.08 or below
+- Alternatively, downgrade firmware to v1.08 or below
 
 You'll need two things from your printer:
 - **Serial Number** — found at Settings → Device Info on the printer screen
-- **LAN Access Code** — found in the Bambu Handy app under your printer → Settings → LAN Mode
+- **LAN Access Code & IP** — found at Settings → LAN Mode on your printer screen
 
 ### 2. Get your FoxTrack credentials
 
@@ -94,8 +94,8 @@ Every status change sends a POST to your FoxTrack webhook with:
 
 ```json
 {
-  "printer_name": "Watson",
-  "serial": "01P00C591701791",
+  "printer_name": "Print Master",
+  "serial": "01P00C500000000",
   "status": "printing",
   "file_name": "benchy.gcode",
   "progress": 47,
@@ -132,7 +132,7 @@ chmod +x build-all.sh
 ## Troubleshooting
 
 **Printer shows "Connecting…" and never connects**
-- Confirm the printer is in LAN Only Mode
+- Confirm the printer is in LAN Only Mode or has downgraded firmware
 - Check the IP address is correct (find it on the printer screen or your router)
 - Make sure the LAN access code matches what's shown in the Bambu app
 - Verify the serial number is correct — it's case-sensitive
