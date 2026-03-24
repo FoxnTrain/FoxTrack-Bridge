@@ -23,7 +23,7 @@ jobs:
             asset: FoxTrack-Bridge-Windows.exe
 
           - os: macos-intel
-            runner: macos-13
+            runner: macos-latest
             goos: darwin
             goarch: amd64
             asset: FoxTrack-Bridge-macOS-Intel
